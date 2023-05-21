@@ -37,5 +37,7 @@ match_results <- function(seasoncode, round_phase, round_number) {
     away_df
   )
   
+  match_results <- janitor::clean_names(match_results)
+  
   return(match_results)
 }

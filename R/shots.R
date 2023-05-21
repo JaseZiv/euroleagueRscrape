@@ -14,7 +14,9 @@ get_each_shots <- function(gamecode, seasoncode) {
   dat_out <- data.frame(GAMECODE=gamecode, SEASON=seasoncode)
   dat_out <- dat_out |> dplyr::bind_cols(
     resp[1] |> dplyr::bind_rows()
-  ) 
+  )
+  
+  dat_out <- janitor::clean_names(dat_out)
   
   return(dat_out)
   

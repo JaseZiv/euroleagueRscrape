@@ -25,5 +25,7 @@ get_each_pbp <- function(gamecode, seasoncode) {
                             CodeTeamB=resp$CodeTeamB, NumQuarters=resp$ActualQuarter, pbp_events)
   }
   
+  pbp <- janitor::clean_names(pbp)
+  
   return(pbp)
 }
