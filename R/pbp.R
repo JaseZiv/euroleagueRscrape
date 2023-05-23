@@ -21,7 +21,7 @@ get_each_pbp <- function(gamecode, seasoncode) {
       resp$ExtraTime |> dplyr::bind_rows()
     )
     
-    pbp <- dplyr::bind_cols(MatchCode=gamecode, SeasonCode=seasoncode, TeamA=resp$TeamA, TeamB=resp$TeamB, CodeTeamA=resp$CodeTeamA, 
+    pbp <- dplyr::bind_cols(Code=gamecode, SeasonCode=seasoncode, TeamA=resp$TeamA, TeamB=resp$TeamB, CodeTeamA=resp$CodeTeamA, 
                             CodeTeamB=resp$CodeTeamB, NumQuarters=resp$ActualQuarter, pbp_events)
   }
   
